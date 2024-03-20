@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22E12B212BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B202BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift */; };
+		22E12B232BAA64B100F3BB3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B222BAA64B100F3BB3A /* ContentView.swift */; };
+		22E12B252BAA64B100F3BB3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E12B242BAA64B100F3BB3A /* Assets.xcassets */; };
+		22E12B282BAA64B100F3BB3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E12B272BAA64B100F3BB3A /* Preview Assets.xcassets */; };
+		22E12B312BAA657E00F3BB3A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 22E12B302BAA657E00F3BB3A /* GoogleSignIn */; };
+		22E12B332BAA657E00F3BB3A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 22E12B322BAA657E00F3BB3A /* GoogleSignInSwift */; };
+		22E12B362BAA65F600F3BB3A /* GoogleAPIClientForREST_Sheets in Frameworks */ = {isa = PBXBuildFile; productRef = 22E12B352BAA65F600F3BB3A /* GoogleAPIClientForREST_Sheets */; };
+		22E12B3B2BAA927300F3BB3A /* GTSheetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B3A2BAA927300F3BB3A /* GTSheetReader.swift */; };
+		22E12B3D2BAA954F00F3BB3A /* GoogleAPIClientForRESTCore in Frameworks */ = {isa = PBXBuildFile; productRef = 22E12B3C2BAA954F00F3BB3A /* GoogleAPIClientForRESTCore */; };
+		22E12B3F2BAA9CA700F3BB3A /* GTSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B3E2BAA9CA700F3BB3A /* GTSession.swift */; };
+		22E12B412BAAAA0600F3BB3A /* GTFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B402BAAAA0600F3BB3A /* GTFileWriter.swift */; };
+		22E12B432BAAB27400F3BB3A /* Poller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B422BAAB27400F3BB3A /* Poller.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22E12B1D2BAA64B100F3BB3A /* GlobalTalk Updater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GlobalTalk Updater.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E12B202BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTalkUpdaterApp.swift; sourceTree = "<group>"; };
+		22E12B222BAA64B100F3BB3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		22E12B242BAA64B100F3BB3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22E12B272BAA64B100F3BB3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22E12B292BAA64B100F3BB3A /* GlobalTalk_Updater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GlobalTalk_Updater.entitlements; sourceTree = "<group>"; };
+		22E12B392BAA6C2800F3BB3A /* GlobalTalk-Updater-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GlobalTalk-Updater-Info.plist"; sourceTree = SOURCE_ROOT; };
+		22E12B3A2BAA927300F3BB3A /* GTSheetReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTSheetReader.swift; sourceTree = "<group>"; };
+		22E12B3E2BAA9CA700F3BB3A /* GTSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTSession.swift; sourceTree = "<group>"; };
+		22E12B402BAAAA0600F3BB3A /* GTFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTFileWriter.swift; sourceTree = "<group>"; };
+		22E12B422BAAB27400F3BB3A /* Poller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poller.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22E12B1A2BAA64B100F3BB3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E12B312BAA657E00F3BB3A /* GoogleSignIn in Frameworks */,
+				22E12B332BAA657E00F3BB3A /* GoogleSignInSwift in Frameworks */,
+				22E12B3D2BAA954F00F3BB3A /* GoogleAPIClientForRESTCore in Frameworks */,
+				22E12B362BAA65F600F3BB3A /* GoogleAPIClientForREST_Sheets in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22E12B142BAA64B000F3BB3A = {
+			isa = PBXGroup;
+			children = (
+				22E12B1F2BAA64B100F3BB3A /* GlobalTalk Updater */,
+				22E12B1E2BAA64B100F3BB3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22E12B1E2BAA64B100F3BB3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22E12B1D2BAA64B100F3BB3A /* GlobalTalk Updater.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22E12B1F2BAA64B100F3BB3A /* GlobalTalk Updater */ = {
+			isa = PBXGroup;
+			children = (
+				22E12B392BAA6C2800F3BB3A /* GlobalTalk-Updater-Info.plist */,
+				22E12B202BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift */,
+				22E12B222BAA64B100F3BB3A /* ContentView.swift */,
+				22E12B402BAAAA0600F3BB3A /* GTFileWriter.swift */,
+				22E12B3A2BAA927300F3BB3A /* GTSheetReader.swift */,
+				22E12B3E2BAA9CA700F3BB3A /* GTSession.swift */,
+				22E12B422BAAB27400F3BB3A /* Poller.swift */,
+				22E12B242BAA64B100F3BB3A /* Assets.xcassets */,
+				22E12B292BAA64B100F3BB3A /* GlobalTalk_Updater.entitlements */,
+				22E12B262BAA64B100F3BB3A /* Preview Content */,
+			);
+			path = "GlobalTalk Updater";
+			sourceTree = "<group>";
+		};
+		22E12B262BAA64B100F3BB3A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				22E12B272BAA64B100F3BB3A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22E12B1C2BAA64B100F3BB3A /* GlobalTalk Updater */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22E12B2C2BAA64B100F3BB3A /* Build configuration list for PBXNativeTarget "GlobalTalk Updater" */;
+			buildPhases = (
+				22E12B192BAA64B100F3BB3A /* Sources */,
+				22E12B1A2BAA64B100F3BB3A /* Frameworks */,
+				22E12B1B2BAA64B100F3BB3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GlobalTalk Updater";
+			packageProductDependencies = (
+				22E12B302BAA657E00F3BB3A /* GoogleSignIn */,
+				22E12B322BAA657E00F3BB3A /* GoogleSignInSwift */,
+				22E12B352BAA65F600F3BB3A /* GoogleAPIClientForREST_Sheets */,
+				22E12B3C2BAA954F00F3BB3A /* GoogleAPIClientForRESTCore */,
+			);
+			productName = "GlobalTalk Updater";
+			productReference = 22E12B1D2BAA64B100F3BB3A /* GlobalTalk Updater.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22E12B152BAA64B000F3BB3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					22E12B1C2BAA64B100F3BB3A = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 22E12B182BAA64B000F3BB3A /* Build configuration list for PBXProject "GlobalTalk Updater" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22E12B142BAA64B000F3BB3A;
+			packageReferences = (
+				22E12B2F2BAA657E00F3BB3A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				22E12B342BAA65F600F3BB3A /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
+			);
+			productRefGroup = 22E12B1E2BAA64B100F3BB3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22E12B1C2BAA64B100F3BB3A /* GlobalTalk Updater */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22E12B1B2BAA64B100F3BB3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E12B282BAA64B100F3BB3A /* Preview Assets.xcassets in Resources */,
+				22E12B252BAA64B100F3BB3A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22E12B192BAA64B100F3BB3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E12B232BAA64B100F3BB3A /* ContentView.swift in Sources */,
+				22E12B432BAAB27400F3BB3A /* Poller.swift in Sources */,
+				22E12B3F2BAA9CA700F3BB3A /* GTSession.swift in Sources */,
+				22E12B212BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift in Sources */,
+				22E12B3B2BAA927300F3BB3A /* GTSheetReader.swift in Sources */,
+				22E12B412BAAAA0600F3BB3A /* GTFileWriter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		22E12B2A2BAA64B100F3BB3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		22E12B2B2BAA64B100F3BB3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		22E12B2D2BAA64B100F3BB3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GlobalTalk Updater/GlobalTalk_Updater.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GlobalTalk Updater/Preview Content\"";
+				DEVELOPMENT_TEAM = 5NYSVPX2S9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GlobalTalk-Updater-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GlobalTalk Updater";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.scj.GlobalTalk-Updater";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		22E12B2E2BAA64B100F3BB3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GlobalTalk Updater/GlobalTalk_Updater.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GlobalTalk Updater/Preview Content\"";
+				DEVELOPMENT_TEAM = 5NYSVPX2S9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GlobalTalk-Updater-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GlobalTalk Updater";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.scj.GlobalTalk-Updater";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22E12B182BAA64B000F3BB3A /* Build configuration list for PBXProject "GlobalTalk Updater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22E12B2A2BAA64B100F3BB3A /* Debug */,
+				22E12B2B2BAA64B100F3BB3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22E12B2C2BAA64B100F3BB3A /* Build configuration list for PBXNativeTarget "GlobalTalk Updater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22E12B2D2BAA64B100F3BB3A /* Debug */,
+				22E12B2E2BAA64B100F3BB3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22E12B2F2BAA657E00F3BB3A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		22E12B342BAA65F600F3BB3A /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/google-api-objectivec-client-for-rest.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22E12B302BAA657E00F3BB3A /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22E12B2F2BAA657E00F3BB3A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		22E12B322BAA657E00F3BB3A /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22E12B2F2BAA657E00F3BB3A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		22E12B352BAA65F600F3BB3A /* GoogleAPIClientForREST_Sheets */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22E12B342BAA65F600F3BB3A /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
+			productName = GoogleAPIClientForREST_Sheets;
+		};
+		22E12B3C2BAA954F00F3BB3A /* GoogleAPIClientForRESTCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22E12B342BAA65F600F3BB3A /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
+			productName = GoogleAPIClientForRESTCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 22E12B152BAA64B000F3BB3A /* Project object */;
+}
