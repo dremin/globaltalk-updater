@@ -19,6 +19,8 @@
 		22E12B3F2BAA9CA700F3BB3A /* GTSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B3E2BAA9CA700F3BB3A /* GTSession.swift */; };
 		22E12B412BAAAA0600F3BB3A /* GTFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B402BAAAA0600F3BB3A /* GTFileWriter.swift */; };
 		22E12B432BAAB27400F3BB3A /* Poller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B422BAAB27400F3BB3A /* Poller.swift */; };
+		22E12B492BAE422C00F3BB3A /* AsyncDNSResolver in Frameworks */ = {isa = PBXBuildFile; productRef = 22E12B482BAE422C00F3BB3A /* AsyncDNSResolver */; };
+		22E12B4B2BAE498500F3BB3A /* GTUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B4A2BAE498500F3BB3A /* GTUpdater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,7 @@
 		22E12B3E2BAA9CA700F3BB3A /* GTSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTSession.swift; sourceTree = "<group>"; };
 		22E12B402BAAAA0600F3BB3A /* GTFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTFileWriter.swift; sourceTree = "<group>"; };
 		22E12B422BAAB27400F3BB3A /* Poller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poller.swift; sourceTree = "<group>"; };
+		22E12B4A2BAE498500F3BB3A /* GTUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTUpdater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,7 @@
 				22E12B332BAA657E00F3BB3A /* GoogleSignInSwift in Frameworks */,
 				22E12B3D2BAA954F00F3BB3A /* GoogleAPIClientForRESTCore in Frameworks */,
 				22E12B362BAA65F600F3BB3A /* GoogleAPIClientForREST_Sheets in Frameworks */,
+				22E12B492BAE422C00F3BB3A /* AsyncDNSResolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +79,7 @@
 				22E12B402BAAAA0600F3BB3A /* GTFileWriter.swift */,
 				22E12B3A2BAA927300F3BB3A /* GTSheetReader.swift */,
 				22E12B3E2BAA9CA700F3BB3A /* GTSession.swift */,
+				22E12B4A2BAE498500F3BB3A /* GTUpdater.swift */,
 				22E12B422BAAB27400F3BB3A /* Poller.swift */,
 				22E12B242BAA64B100F3BB3A /* Assets.xcassets */,
 				22E12B292BAA64B100F3BB3A /* GlobalTalk_Updater.entitlements */,
@@ -112,6 +117,7 @@
 				22E12B322BAA657E00F3BB3A /* GoogleSignInSwift */,
 				22E12B352BAA65F600F3BB3A /* GoogleAPIClientForREST_Sheets */,
 				22E12B3C2BAA954F00F3BB3A /* GoogleAPIClientForRESTCore */,
+				22E12B482BAE422C00F3BB3A /* AsyncDNSResolver */,
 			);
 			productName = "GlobalTalk Updater";
 			productReference = 22E12B1D2BAA64B100F3BB3A /* GlobalTalk Updater.app */;
@@ -144,6 +150,7 @@
 			packageReferences = (
 				22E12B2F2BAA657E00F3BB3A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				22E12B342BAA65F600F3BB3A /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
+				22E12B472BAE422C00F3BB3A /* XCRemoteSwiftPackageReference "swift-async-dns-resolver" */,
 			);
 			productRefGroup = 22E12B1E2BAA64B100F3BB3A /* Products */;
 			projectDirPath = "";
@@ -175,6 +182,7 @@
 				22E12B432BAAB27400F3BB3A /* Poller.swift in Sources */,
 				22E12B3F2BAA9CA700F3BB3A /* GTSession.swift in Sources */,
 				22E12B212BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift in Sources */,
+				22E12B4B2BAE498500F3BB3A /* GTUpdater.swift in Sources */,
 				22E12B3B2BAA927300F3BB3A /* GTSheetReader.swift in Sources */,
 				22E12B412BAAAA0600F3BB3A /* GTFileWriter.swift in Sources */,
 			);
@@ -403,6 +411,14 @@
 				kind = branch;
 			};
 		};
+		22E12B472BAE422C00F3BB3A /* XCRemoteSwiftPackageReference "swift-async-dns-resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-async-dns-resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -425,6 +441,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 22E12B342BAA65F600F3BB3A /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
 			productName = GoogleAPIClientForRESTCore;
+		};
+		22E12B482BAE422C00F3BB3A /* AsyncDNSResolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22E12B472BAE422C00F3BB3A /* XCRemoteSwiftPackageReference "swift-async-dns-resolver" */;
+			productName = AsyncDNSResolver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

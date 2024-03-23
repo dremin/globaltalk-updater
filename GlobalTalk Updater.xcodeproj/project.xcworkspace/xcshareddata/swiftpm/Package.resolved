@@ -1,5 +1,5 @@
 {
-  "originHash" : "53251cabfdeaa70f9be3d94a22478a5efc8359ff6ef734f4f2d4f6b75eaca975",
+  "originHash" : "e0b95677ccd472b343f429a59bb11c8d222db5e2fbace0a2088e9a326b47a1a1",
   "pins" : [
     {
       "identity" : "appauth-ios",
@@ -44,6 +44,15 @@
       "state" : {
         "revision" : "cee3c709307912d040bd1e06ca919875a92339c6",
         "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "swift-async-dns-resolver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-async-dns-resolver",
+      "state" : {
+        "revision" : "b7079b75cd604bc675af080edef56b486decb155",
+        "version" : "0.3.1"
       }
     }
   ],

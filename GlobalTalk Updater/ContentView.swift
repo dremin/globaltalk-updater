@@ -14,6 +14,7 @@ struct ContentView: View {
     @ObservedObject var fileWriter: GTFileWriter
     @ObservedObject var session: GTSession
     @ObservedObject var poller: Poller
+    @ObservedObject var updater: GTUpdater
     
     var body: some View {
         VStack(spacing: 15) {
@@ -74,10 +75,23 @@ struct ContentView: View {
                             poller.suspend()
                         }
                     }
-                    if let lastWrite = fileWriter.lastWrite {
-                        Text("Latest update: \(formatDate(lastWrite))")
-                            .font(.footnote)
+                    VStack(spacing: 10) {
+                        if updater.state == .loading {
+                            HStack(spacing: 4) {
+                                ProgressView().controlSize(.small)
+                                Text("Fetching the latest data...")
+                            }
+                        } else if let lastWrite = fileWriter.lastWrite {
+                            Text("Latest update: \(formatDate(lastWrite))")
+                        }
+                        
+                        if updater.state == .failed {
+                            Label("An error occurred during the last update attempt.", systemImage: "exclamationmark.triangle.fill")
+                                .foregroundStyle(.red)
+                                .help(updater.lastError ?? "Unknown error")
+                        }
                     }
+                    .font(.footnote)
                 }
                 .controlSize(.large)
                 .buttonStyle(BorderedProminentButtonStyle())
@@ -96,9 +110,9 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(fileWriter: GTFileWriter(fileName: ""), session: GTSession(isSignedIn: true), poller: Poller(timeInterval: 99999999999))
+    ContentView(fileWriter: GTFileWriter(fileName: ""), session: GTSession(isSignedIn: true), poller: Poller(timeInterval: 99999999999), updater: GTUpdater())
 }
 
 #Preview {
-    ContentView(fileWriter: GTFileWriter(fileName: ""), session: GTSession(isSignedIn: false), poller: Poller(timeInterval: 99999999999))
+    ContentView(fileWriter: GTFileWriter(fileName: ""), session: GTSession(isSignedIn: false), poller: Poller(timeInterval: 99999999999), updater: GTUpdater())
 }
