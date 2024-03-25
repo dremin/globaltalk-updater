@@ -2,7 +2,11 @@
 
 # GlobalTalk Updater
 
-GlobalTalk Updater is a macOS app for generating a list of GlobalTalk host IP addresses, which [AIRConfig](https://mastodon.social/@kalleboo@bitbang.social/112145910679083054) can import into Apple Internet Router for connecting to GlobalTalk.
+GlobalTalk Updater is a macOS app for generating a list of [GlobalTalk](http://marchintosh.com/globaltalk.html) router IP addresses, which can be imported into Apple Internet Router using [AIRConfig](https://mastodon.social/@kalleboo@bitbang.social/112145910679083054).
+
+Created for #MARCHintosh 2024.
+
+![MARCHintosh logo](http://www.marchintosh.com/images/logo-small.gif)
 
 ## Requirements
 
