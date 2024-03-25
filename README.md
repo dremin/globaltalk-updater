@@ -1,4 +1,4 @@
-![GlobalTalk logo](http://marchintosh.com/images/GT_Logo.jpg)
+![GlobalTalk logo](https://marchintosh.com/images/GT_Logo.jpg)
 
 # GlobalTalk Updater
 
@@ -6,7 +6,7 @@ GlobalTalk Updater is a macOS app for generating a list of [GlobalTalk](https://
 
 Created for [#MARCHintosh](https://marchintosh.com/) 2024.
 
-![MARCHintosh logo](http://www.marchintosh.com/images/logo-small.gif)
+![MARCHintosh logo](https://www.marchintosh.com/images/logo-small.gif)
 
 ## Requirements
 
