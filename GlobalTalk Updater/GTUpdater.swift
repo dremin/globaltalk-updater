@@ -57,6 +57,13 @@ import AsyncDNSResolver
             Task {
                 var ipList: [String] = []
                 for row in rows {
+                    guard !row.isEmpty else {
+                        // If the row is empty there is a problem with the sheet
+                        self.lastError = "Unable to read the Google Sheet."
+                        self.state = .failed
+                        return
+                    }
+                    
                     var ip = row[0]
                     if self.invalidChars.contains(where: ip.contains) {
                         // Filter out rows with invalid characters
