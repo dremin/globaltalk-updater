@@ -14,7 +14,7 @@ import AsyncDNSResolver
     let spreadsheetRange = "JustTheFacts!A2:A"
     let invalidChars = [":", ";", ",", "/", " "]
     
-    var fileWriter: GTFileWriter?
+    var fileWriters: [GTFileWriter] = []
     @Published var state: UpdaterState = .idle
     @Published var lastError: String?
     
@@ -24,16 +24,13 @@ import AsyncDNSResolver
         case failed
     }
     
-    func set(fileWriter: GTFileWriter) {
-        self.fileWriter = fileWriter
+    func add(fileWriter: GTFileWriter) {
+        self.fileWriters.append(fileWriter)
     }
     
     func getData() {
         let sheet = GTSheetReader()
         let letters = NSCharacterSet.letters
-        guard let fileWriter = self.fileWriter else {
-            return
-        }
         
         self.state = .loading
         
@@ -96,7 +93,9 @@ import AsyncDNSResolver
                     return
                 }
                 
-                fileWriter.write(ipList: ipList)
+                for fileWriter in self.fileWriters {
+                    fileWriter.write(ipList: ipList)
+                }
                 
                 self.state = .idle
                 self.lastError = nil

@@ -12,14 +12,15 @@ import AsyncDNSResolver
 
 @main
 struct GlobalTalkUpdaterApp: App {
-    @ObservedObject var fileWriter = GTFileWriter(fileName: "GlobalTalk IP List.txt")
+    @ObservedObject var fileWriter_airConfig = GTFileWriter(fileName: "GlobalTalk IP List.txt", separator: ";")
+    @ObservedObject var fileWriter_jrouter = GTFileWriter(fileName: "GlobalTalk_jrouter.txt", separator: "\n")
     @ObservedObject var session = GTSession()
     @ObservedObject var poller = Poller(timeInterval: 600)
     @ObservedObject var updater = GTUpdater()
     
     var body: some Scene {
         WindowGroup {
-            ContentView(fileWriter: self.fileWriter, session: self.session, poller: self.poller, updater: self.updater)
+            ContentView(fileWriter_airConfig: self.fileWriter_airConfig, fileWriter_jrouter: self.fileWriter_jrouter, session: self.session, poller: self.poller, updater: self.updater)
                 .frame(width: 300, alignment: .center)
             .onOpenURL { url in
                 GIDSignIn.sharedInstance.handle(url)
@@ -30,7 +31,8 @@ struct GlobalTalkUpdaterApp: App {
                         self.updater.getData()
                     }
                 }
-                self.updater.set(fileWriter: self.fileWriter)
+                self.updater.add(fileWriter: self.fileWriter_airConfig)
+                self.updater.add(fileWriter: self.fileWriter_jrouter)
                 GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
                     guard let user = user else { return }
                     guard error == nil else { return }
