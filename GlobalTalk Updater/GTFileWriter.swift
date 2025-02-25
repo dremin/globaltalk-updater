@@ -10,14 +10,14 @@ import GoogleSignIn
 import os.log
 
 class GTFileWriter: ObservableObject {
-    let separator = ";"
-    
     @Published var destinationDirectory = ""
     @Published var lastWrite: Date?
     var fileName: String
+    var separator: String
     
-    init(fileName: String) {
+    init(fileName: String, separator: String) {
         self.fileName = fileName
+        self.separator = separator
     }
     
     func setDestination(_ directory: String) {

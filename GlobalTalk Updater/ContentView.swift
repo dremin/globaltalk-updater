@@ -11,7 +11,8 @@ import GoogleSignIn
 import os.log
 
 struct ContentView: View {
-    @ObservedObject var fileWriter: GTFileWriter
+    @ObservedObject var fileWriter_airConfig: GTFileWriter
+    @ObservedObject var fileWriter_jrouter: GTFileWriter
     @ObservedObject var session: GTSession
     @ObservedObject var poller: Poller
     @ObservedObject var updater: GTUpdater
@@ -41,14 +42,14 @@ struct ContentView: View {
                 .padding()
             }
             if session.isSignedIn {
-                GroupBox("File Destination") {
+                GroupBox("AIRConfig File Destination") {
                     VStack(alignment: .leading) {
-                        if fileWriter.destinationDirectory.isEmpty {
+                        if fileWriter_airConfig.destinationDirectory.isEmpty {
                             Text("Select a destination to begin.")
                         } else {
                             Text("Selected destination:")
                                 .bold()
-                            Text(fileWriter.destinationDirectory.replacingOccurrences(of: "file://", with: ""))
+                            Text(fileWriter_airConfig.destinationDirectory.replacingOccurrences(of: "file://", with: ""))
                         }
                         Button("Select Destination") {
                             let panel = NSOpenPanel()
@@ -56,7 +57,29 @@ struct ContentView: View {
                             panel.canChooseDirectories = true
                             panel.allowsMultipleSelection = false
                             if panel.runModal() == .OK {
-                                fileWriter.setDestination(panel.url?.absoluteString ?? "")
+                                fileWriter_airConfig.setDestination(panel.url?.absoluteString ?? "")
+                            }
+                        }
+                    }
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                }
+                GroupBox("jrouter File Destination") {
+                    VStack(alignment: .leading) {
+                        if fileWriter_jrouter.destinationDirectory.isEmpty {
+                            Text("Select a destination to begin.")
+                        } else {
+                            Text("Selected destination:")
+                                .bold()
+                            Text(fileWriter_jrouter.destinationDirectory.replacingOccurrences(of: "file://", with: ""))
+                        }
+                        Button("Select Destination") {
+                            let panel = NSOpenPanel()
+                            panel.canChooseFiles = false
+                            panel.canChooseDirectories = true
+                            panel.allowsMultipleSelection = false
+                            if panel.runModal() == .OK {
+                                fileWriter_jrouter.setDestination(panel.url?.absoluteString ?? "")
                             }
                         }
                     }
@@ -69,7 +92,7 @@ struct ContentView: View {
                         Button("Start Auto Update", systemImage: "play.fill") {
                             poller.resume()
                         }
-                        .disabled(fileWriter.destinationDirectory.isEmpty)
+                        .disabled(!(!fileWriter_airConfig.destinationDirectory.isEmpty || !fileWriter_jrouter.destinationDirectory.isEmpty))
                     } else {
                         Button("Stop Auto Update", systemImage: "stop.fill") {
                             poller.suspend()
@@ -81,7 +104,9 @@ struct ContentView: View {
                                 ProgressView().controlSize(.small)
                                 Text("Fetching the latest data...")
                             }
-                        } else if let lastWrite = fileWriter.lastWrite {
+                        } else if let lastWrite = fileWriter_airConfig.lastWrite {
+                            Text("Latest update: \(formatDate(lastWrite))")
+                        } else if let lastWrite = fileWriter_jrouter.lastWrite {
                             Text("Latest update: \(formatDate(lastWrite))")
                         }
                         
@@ -110,9 +135,9 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(fileWriter: GTFileWriter(fileName: ""), session: GTSession(isSignedIn: true), poller: Poller(timeInterval: 99999999999), updater: GTUpdater())
+    ContentView(fileWriter_airConfig: GTFileWriter(fileName: "", separator: ";"), fileWriter_jrouter: GTFileWriter(fileName: "", separator: "\n"), session: GTSession(isSignedIn: true), poller: Poller(timeInterval: 99999999999), updater: GTUpdater())
 }
 
 #Preview {
-    ContentView(fileWriter: GTFileWriter(fileName: ""), session: GTSession(isSignedIn: false), poller: Poller(timeInterval: 99999999999), updater: GTUpdater())
+    ContentView(fileWriter_airConfig: GTFileWriter(fileName: "", separator: ";"), fileWriter_jrouter: GTFileWriter(fileName: "", separator: "\n"), session: GTSession(isSignedIn: false), poller: Poller(timeInterval: 99999999999), updater: GTUpdater())
 }
