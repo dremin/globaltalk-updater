@@ -55,10 +55,8 @@ import AsyncDNSResolver
                 var ipList: [String] = []
                 for row in rows {
                     guard !row.isEmpty else {
-                        // If the row is empty there is a problem with the sheet
-                        self.lastError = "Unable to read the Google Sheet."
-                        self.state = .failed
-                        return
+                        os_log("Skipping empty row")
+                        continue
                     }
                     
                     var ip = row[0]
@@ -75,11 +73,11 @@ import AsyncDNSResolver
                                 ip = aRecords[0].address.address
                             } else {
                                 // MacTCP DNR is flaky; if we can't resolve this then it's unlikely MacTCP DNR can
-                                continue;
+                                continue
                             }
                         } catch {
                             os_log("Error thrown while resolving hostname \(ip): \(error)")
-                            continue;
+                            continue
                         }
                     }
                     
