@@ -59,7 +59,7 @@ import AsyncDNSResolver
                         continue
                     }
                     
-                    var ip = row[0]
+                    var ip = row[0].trimmingCharacters(in: .whitespacesAndNewlines)
                     if self.invalidChars.contains(where: ip.contains) {
                         // Filter out rows with invalid characters
                         continue
