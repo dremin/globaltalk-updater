@@ -19,6 +19,12 @@ class GTSession: ObservableObject {
     init(isSignedIn: Bool = false) {
         // This should only be set true for previews usage
         self.isSignedIn = isSignedIn
+        
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            guard let user = user else { return }
+            guard error == nil else { return }
+            self.handlePreviousSession(user)
+        }
     }
     
     func handlePreviousSession(_ user: GIDGoogleUser?) {

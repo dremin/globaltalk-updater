@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		226681262D891964009B6BA7 /* MenuBarExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226681252D891964009B6BA7 /* MenuBarExtraView.swift */; };
 		22E12B212BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B202BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift */; };
 		22E12B232BAA64B100F3BB3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E12B222BAA64B100F3BB3A /* ContentView.swift */; };
 		22E12B252BAA64B100F3BB3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E12B242BAA64B100F3BB3A /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		226681252D891964009B6BA7 /* MenuBarExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarExtraView.swift; sourceTree = "<group>"; };
 		22E12B1D2BAA64B100F3BB3A /* GlobalTalk Updater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GlobalTalk Updater.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E12B202BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTalkUpdaterApp.swift; sourceTree = "<group>"; };
 		22E12B222BAA64B100F3BB3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				22E12B392BAA6C2800F3BB3A /* GlobalTalk-Updater-Info.plist */,
 				22E12B202BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift */,
 				22E12B222BAA64B100F3BB3A /* ContentView.swift */,
+				226681252D891964009B6BA7 /* MenuBarExtraView.swift */,
 				22E12B402BAAAA0600F3BB3A /* GTFileWriter.swift */,
 				22E12B3A2BAA927300F3BB3A /* GTSheetReader.swift */,
 				22E12B3E2BAA9CA700F3BB3A /* GTSession.swift */,
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22E12B232BAA64B100F3BB3A /* ContentView.swift in Sources */,
+				226681262D891964009B6BA7 /* MenuBarExtraView.swift in Sources */,
 				22E12B432BAAB27400F3BB3A /* Poller.swift in Sources */,
 				22E12B3F2BAA9CA700F3BB3A /* GTSession.swift in Sources */,
 				22E12B212BAA64B100F3BB3A /* GlobalTalkUpdaterApp.swift in Sources */,

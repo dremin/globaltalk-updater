@@ -100,4 +100,12 @@ import AsyncDNSResolver
             }
         }
     }
+    
+    func formatDate(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .long
+        
+        return dateFormatter.string(from: date)
+    }
 }
