@@ -34,7 +34,7 @@ class GTFileWriter: ObservableObject {
         let url = URL(fileURLWithPath: destinationDirectory).appending(path: fileName)
         
         do {
-            try data.write(to: url, options: [.atomic, .completeFileProtection])
+            try data.write(to: url)
             let contents = try String(contentsOf: url)
             self.lastWrite = .now
             os_log("Successfully wrote file contents: \(contents)")

@@ -6,8 +6,6 @@ GlobalTalk Updater is a macOS app for generating a list of [GlobalTalk](https://
 
 Created for [#MARCHintosh](https://marchintosh.com/) 2024 and 2025.
 
-![MARCHintosh logo](https://www.marchintosh.com/images/logo-small.gif)
-
 ![Screenshot](screenshot.png)
 
 ## Requirements

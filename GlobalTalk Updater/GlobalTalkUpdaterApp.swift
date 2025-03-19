@@ -18,28 +18,32 @@ struct GlobalTalkUpdaterApp: App {
     @ObservedObject var poller = Poller(timeInterval: 600)
     @ObservedObject var updater = GTUpdater()
     
+    init() {
+        initApp()
+    }
+    
+    func initApp() {
+        self.poller.eventHandler = {
+            DispatchQueue.main.async {
+                self.updater.getData()
+            }
+        }
+        self.updater.add(fileWriter: self.fileWriter_airConfig)
+        self.updater.add(fileWriter: self.fileWriter_jrouter)
+    }
+    
     var body: some Scene {
-        WindowGroup {
+        Window("GlobalTalk Updater", id: "settings-window") {
             ContentView(fileWriter_airConfig: self.fileWriter_airConfig, fileWriter_jrouter: self.fileWriter_jrouter, session: self.session, poller: self.poller, updater: self.updater)
                 .frame(width: 300, alignment: .center)
             .onOpenURL { url in
                 GIDSignIn.sharedInstance.handle(url)
             }
-            .onAppear {
-                self.poller.eventHandler = {
-                    DispatchQueue.main.async {
-                        self.updater.getData()
-                    }
-                }
-                self.updater.add(fileWriter: self.fileWriter_airConfig)
-                self.updater.add(fileWriter: self.fileWriter_jrouter)
-                GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-                    guard let user = user else { return }
-                    guard error == nil else { return }
-                    session.handlePreviousSession(user)
-                }
-            }
         }
         .windowResizability(.contentSize)
+        
+        MenuBarExtra("GlobalTalk Updater", systemImage: "externaldrive.connected.to.line.below") {
+            MenuBarExtraView(fileWriter_airConfig: self.fileWriter_airConfig, fileWriter_jrouter: self.fileWriter_jrouter, session: self.session, poller: self.poller, updater: self.updater)
+        }
     }
 }

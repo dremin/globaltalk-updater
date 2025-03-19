@@ -105,9 +105,9 @@ struct ContentView: View {
                                 Text("Fetching the latest data...")
                             }
                         } else if let lastWrite = fileWriter_airConfig.lastWrite {
-                            Text("Latest update: \(formatDate(lastWrite))")
+                            Text("Latest update: \(updater.formatDate(lastWrite))")
                         } else if let lastWrite = fileWriter_jrouter.lastWrite {
-                            Text("Latest update: \(formatDate(lastWrite))")
+                            Text("Latest update: \(updater.formatDate(lastWrite))")
                         }
                         
                         if updater.state == .failed {
@@ -123,14 +123,6 @@ struct ContentView: View {
             }
         }
         .padding()
-    }
-    
-    func formatDate(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .long
-        
-        return dateFormatter.string(from: date)
     }
 }
 
